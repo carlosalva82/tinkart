@@ -1,10 +1,5 @@
 {
-    "minimum-stability": "stable",
     "require": {
-        "doctrine/orm": "2.2.2",
-        "doctrine/common": "2.2.0",
-        "doctrine/dbal": "2.2.1",
-        "symfony/console": "2.x",
-        "symfony/yaml": "2.x"
+       "doctrine/orm": "2.3.*"
     }
 }
