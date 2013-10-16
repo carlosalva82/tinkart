@@ -80,7 +80,7 @@ $autoload['helper'] = array();
 |
 */
 
-$autoload['config'] = array('doctrine');
+$autoload['config'] = array();
 
 
 /*

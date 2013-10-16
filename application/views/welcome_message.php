@@ -33,7 +33,7 @@
 		padding: 14px 15px 10px 15px;
 	}
 
-	code {
+	code, pre {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
 		background-color: #f9f9f9;
@@ -44,10 +44,18 @@
 		padding: 12px 10px 12px 10px;
 	}
 
+    code.inline {
+        font-family: monospace;
+        margin: 0;
+        padding: 12px 4px 12px 4px;
+        display: inline;
+        border: none;
+    }
+
 	#body{
 		margin: 0 15px 0 15px;
 	}
-	
+
 	p.footer{
 		text-align: right;
 		font-size: 11px;
@@ -56,7 +64,7 @@
 		padding: 0 10px 0 10px;
 		margin: 20px 0 0 0;
 	}
-	
+
 	#container{
 		margin: 10px;
 		border: 1px solid #D0D0D0;
@@ -67,18 +75,34 @@
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>Welcome to CodeIgniter with Doctrine!</h1>
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+		<p>This installation of CodeIgniter with Doctrine 2 has been created and configured by Joseph Wynn from <a href="http://wildlyinaccurate.com/">Wildly Inaccurate</a>.</p>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+		<p>You can access the Doctrine Entity Manager in your controllers through the Doctrine library:</p>
+		<code>$this->load->library('doctrine');<br />
+		$em = $this->doctrine->em;</code>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
+		<p>Two sample models has been created for you in:</p>
+		<pre>application/models/Entity/User.php</pre>
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<p>The following code was used in the Welcome controller to create new User and Group entities.</p>
+		
+		<p>Below is the output of <code class="inline">print_r($user)</code>:</p>
+		<pre><?php print_r($user); ?></pre>
+
+		<
+		
+
+		<p>The Doctrine console is ready for you to use. Just run <code class="inline">./application/doctrine</code> on Linux & Mac, or <code class="inline">php.exe ./application/doctrine.php</code> on Windows.</p>
+
+		<p>For more information about integrating Doctrine with CodeIgniter, read <em><a href="http://wildlyinaccurate.com/integrating-doctrine-2-with-codeigniter-2/">Integrating Doctrine 2 with CodeIgniter 2</a></em>.</p>
+
+		<h2>Version Information</h2>
+		<pre>CodeIgniter <?php echo CI_VERSION; ?>
+
+Doctrine <?php echo \Doctrine\ORM\Version::VERSION; ?></pre>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
