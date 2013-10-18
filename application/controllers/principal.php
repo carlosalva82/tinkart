@@ -6,50 +6,35 @@ if (!defined('BASEPATH'))
 class Principal extends CI_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see http://codeigniter.com/user_guide/general/urls.html
-     */
     public function index()
     {
-        $this->load->library('doctrine');
-
-//        $group = new Entity\UserGroup;
-//        $group->setName('Users');
-
-        $user = new Entity\User;
+        // Set the title
+        $this->template->title = 'Pagina por defecto!';
        
-       
-        $user->setUsername('charlie');
-        $user->setLastname('alva');
-        $user->setName('Carlos');
-        $user->setNuevo('Nuevo');
-      
+        //styles
+        $this->template->stylesheet
+                ->add('include/css/default.css')
+                ->add('include/bootstrap3.0/css/bootstrap.min.css');
+        
+        // Load a view in the content partial
+        $this->template->content->view('principal_message', array('title' => 'Hello, world!'));
+        $this->template->content->view('template/hero', array('title' => 'Hello, world!'));
 
-        // When you have set up your database, you can persist these entities:
-        // $em = $this->doctrine->em;
-        // $em->persist($group);
-        // $em->persist($user);
-        // $em->flush();
-
-        $this->load->view('principal_message', array(
-            'user' => $user,
-            
-        ));
+//        $news = array(); // load from model (but using a dummy array here)
+//        $this->template->content->view('news', $news);
+        
+        
+        // Set a partial's content
+        //$this->template->footer = 'Made with Twitter Bootstrap';
+        
+        //set javascript
+        $this->template->javascript
+                ->add('include/js/jquery-1.10.2.min.js')
+                ->add('include/bootstrap3.0/js/bootstrap.min.js');
+        
+        // Publish the template
+        $this->template->publish();
     }
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
