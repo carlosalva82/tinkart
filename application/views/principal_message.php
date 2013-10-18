@@ -75,37 +75,9 @@
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter with Doctrine!</h1>
+	<h1>Estas en application controller</h1>
 
-	<div id="body">
-		<p>This installation of CodeIgniter with Doctrine 2 has been created and configured by Joseph Wynn from <a href="http://wildlyinaccurate.com/">Wildly Inaccurate</a>.</p>
-
-		<p>You can access the Doctrine Entity Manager in your controllers through the Doctrine library:</p>
-		<code>$this->load->library('doctrine');<br />
-		$em = $this->doctrine->em;</code>
-
-		<p>Two sample models has been created for you in:</p>
-		<pre>application/models/Entity/User.php</pre>
-
-		<p>The following code was used in the Welcome controller to create new User and Group entities.</p>
-		
-		<p>Below is the output of <code class="inline">print_r($user)</code>:</p>
-		<pre><?php print_r($user); ?></pre>
-
-		<
-		
-
-		<p>The Doctrine console is ready for you to use. Just run <code class="inline">./application/doctrine</code> on Linux & Mac, or <code class="inline">php.exe ./application/doctrine.php</code> on Windows.</p>
-
-		<p>For more information about integrating Doctrine with CodeIgniter, read <em><a href="http://wildlyinaccurate.com/integrating-doctrine-2-with-codeigniter-2/">Integrating Doctrine 2 with CodeIgniter 2</a></em>.</p>
-
-		<h2>Version Information</h2>
-		<pre>CodeIgniter <?php echo CI_VERSION; ?>
-
-Doctrine <?php echo \Doctrine\ORM\Version::VERSION; ?></pre>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+	
 </div>
 
 </body>

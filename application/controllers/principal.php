@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Welcome extends CI_Controller
+class Principal extends CI_Controller
 {
 
     /**
@@ -43,7 +43,7 @@ class Welcome extends CI_Controller
         // $em->persist($user);
         // $em->flush();
 
-        $this->load->view('welcome_message', array(
+        $this->load->view('principal_message', array(
             'user' => $user,
             
         ));
