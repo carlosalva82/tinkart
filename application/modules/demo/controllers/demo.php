@@ -2,6 +2,9 @@
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
+require_once(APPPATH . "modules/demo/Service/Service.php");
+
+use Service\Service;
 
 class Demo extends CI_Controller
 {
@@ -29,13 +32,13 @@ class Demo extends CI_Controller
 //        $group->setName('Users');
 
         $user = new Entity\User;
-       
-       
+        $service = new Service();
+
         $user->setUsername('charlie');
         $user->setLastname('alva');
         $user->setName('Carlos');
         $user->setNuevo('Nuevo');
-      
+
 
         // When you have set up your database, you can persist these entities:
         // $em = $this->doctrine->em;
@@ -45,7 +48,7 @@ class Demo extends CI_Controller
 
         $this->load->view('welcome_message', array(
             'user' => $user,
-            
+            'service' => $service->index()
         ));
     }
 

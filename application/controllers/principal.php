@@ -3,6 +3,10 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+require_once(APPPATH."Service/Demo.php");
+use Service\Service;
+
+
 class Principal extends CI_Controller
 {
 
@@ -17,7 +21,8 @@ class Principal extends CI_Controller
                 ->add('include/bootstrap3.0/css/bootstrap.min.css');
         
         // Load a view in the content partial
-        $this->template->content->view('principal_message', array('title' => 'Hello, world!'));
+        $service = new Service();
+        $this->template->content->view('principal_message', array('title' => 'Hello, world!','service'=>$service->index()));
         $this->template->content->view('template/hero', array('title' => 'Hello, world!'));
 
 //        $news = array(); // load from model (but using a dummy array here)

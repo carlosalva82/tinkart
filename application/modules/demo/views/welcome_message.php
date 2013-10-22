@@ -76,7 +76,7 @@
 
 <div id="container">
 	<h1>Welcome to CodeIgniter with Doctrine!</h1>
-
+        <h3><?php echo $service;?></h3>
 	<div id="body">
 		<p>This installation of CodeIgniter with Doctrine 2 has been created and configured by Joseph Wynn from <a href="http://wildlyinaccurate.com/">Wildly Inaccurate</a>.</p>
 
