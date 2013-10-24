@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('doctrine','template');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url','form');
 
 
 /*
@@ -112,6 +112,6 @@ $autoload['language'] = array();
 $autoload['model'] = array();
 
 
-$autoload['libraries'] = array('template');
+
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

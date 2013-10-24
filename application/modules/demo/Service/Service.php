@@ -2,8 +2,9 @@
 
 namespace Service;
 
-class Service
+class Service extends \CisotecService
 {
+
 
     public function index()
     {

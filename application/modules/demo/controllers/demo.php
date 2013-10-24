@@ -26,7 +26,6 @@ class Demo extends CI_Controller
      */
     public function index()
     {
-        $this->load->library('doctrine');
 
 //        $group = new Entity\UserGroup;
 //        $group->setName('Users');
