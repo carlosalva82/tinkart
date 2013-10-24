@@ -32,19 +32,49 @@ class Producto extends CI_Controller
 
     public function edit()
     {
-      
-        $productId = $this->input->get('id',TRUE);
-        
+
+        $productId = $this->uri->segment(4);
         $product = $this->getProductService()->getProduct($productId);
         $this->template->title = 'Edit Product';
-        if ($_POST) {
-            
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('title', 'Title', 'trim|required');
+
+            if ($this->form_validation->run() == TRUE) {
+                $this->getProductService()->updateProduct($product, $this->input->post());
+                $this->session->set_flashdata('message', array('success', 'se actualizo exitosamente'));
+                redirect(base_url('/producto'));
+            }
         }
-       
         $this->template->content->view('producto/edit', array(
             'product' => $product
         ));
-        
+
+        $this->template->publish();
+    }
+
+    public function delete()
+    {
+        $productId = $this->uri->segment(4);
+        $this->getProductService()->deleteProduct($productId);
+        $this->session->set_flashdata('message', array('success', 'se elimino exitosamente'));
+        redirect(base_url('/producto'));
+    }
+
+    public function add()
+    {
+
+        $this->template->title = 'Add Product';
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('title', 'Title', 'trim|required');
+
+            if ($this->form_validation->run() == TRUE) {
+                $this->getProductService()->saveProduct($this->input->post());
+                $this->session->set_flashdata('message', array('success', 'se actualizo exitosamente'));
+                redirect(base_url('/producto'));
+            }
+        }
+        $this->template->content->view('producto/add');
+
         $this->template->publish();
     }
 

@@ -1,6 +1,6 @@
-<button class="btn btn-primary">
+<a href="<?php echo base_url('/producto/add') ?>" class="btn btn-primary">
     <span class="glyphicon glyphicon-plus"></span>
-    add new</button>
+    add new</a>
 
 <table class="table table-striped">
     <tr>
@@ -13,9 +13,15 @@
         ?>
         <tr>
             <td><?php echo $product->getTitle(); ?></td> 
-            <td><button class="btn btn-sm">
+            <td><a href="<?php echo base_url('/producto/delete/id/' . $product->getId()) ?>" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-trash"></span>
-                    delete</button></td> 
+                    delete</a> 
+                <a class="btn btn-default btn-sm" href="<?php echo base_url('/producto/edit/id/' . $product->getId()) ?>">
+
+                    <span class="glyphicon glyphicon-edit"></span>
+                    edit
+                </a>
+            </td> 
 
         </tr>
         <?php
