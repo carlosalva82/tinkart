@@ -4,7 +4,7 @@ namespace Service;
 
 class ProductService extends \CisotecService
 {
-
+   
     private function getRepositoryProduct()
     {
         return $this->entityManager->getRepository('Entity\Product');

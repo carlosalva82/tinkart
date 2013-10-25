@@ -6,7 +6,6 @@ if (!defined('BASEPATH'))
 require_once(APPPATH . "Service/ProductService.php");
 
 use Service\ProductService;
-use Entity\Product;
 
 class Producto extends CI_Controller
 {
