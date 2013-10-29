@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('doctrine','template','form_validation','session');
+$autoload['libraries'] = array('doctrine','template','form_validation','session','gettextphp');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('doctrine','template','form_validation','session'
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','form');
+$autoload['helper'] = array('url','form','translate');
 
 
 /*

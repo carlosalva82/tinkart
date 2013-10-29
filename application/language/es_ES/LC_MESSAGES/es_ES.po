@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-10-29 07:50-0500\n"
+"PO-Revision-Date: 2013-10-29 07:51-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: En\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\tk_repo\\application\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: controllers/producto.php:28 ../application/controllers/producto.php:28
+msgid "List of Products"
+msgstr "Lista de Productos"
+
+#: controllers/producto.php:41 ../application/controllers/producto.php:41
+msgid "Edit Product"
+msgstr "Editar Producto"
+
+#: controllers/producto.php:47 controllers/producto.php:75
+#: ../application/controllers/producto.php:47
+#: ../application/controllers/producto.php:75
+msgid "Product was updated successfully"
+msgstr "El Producto fue actualizado exitosamente"
+
+#: controllers/producto.php:62 ../application/controllers/producto.php:62
+msgid "Product was deleted successfully"
+msgstr "El Producto fue eliminado exitosamente"
+
+#: controllers/producto.php:69 ../application/controllers/producto.php:69
+msgid "Add Product"
+msgstr "Agregar Producto"

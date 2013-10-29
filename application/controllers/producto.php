@@ -10,9 +10,18 @@ use Service\ProductService;
 class Producto extends CI_Controller
 {
 
+    protected $language;
+
     private function getProductService()
     {
         return new ProductService();
+    }
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->language = $this->gettextphp;
+        $this->language->set_language('es_ES');
     }
 
     public function index()
@@ -21,7 +30,7 @@ class Producto extends CI_Controller
         $productService = $this->getProductService();
         $products = $productService->fetchProducts();
 
-        $this->template->title = 'List of Products';
+        $this->template->title = $this->language->translate("List of Products");
         $this->template->content->view('producto/index', array(
             'products' => $products,
         ));
@@ -34,13 +43,13 @@ class Producto extends CI_Controller
 
         $productId = $this->uri->segment(4);
         $product = $this->getProductService()->getProduct($productId);
-        $this->template->title = 'Edit Product';
+        $this->template->title = $this->language->translate('Edit Product');
         if ($this->input->post()) {
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
 
             if ($this->form_validation->run() == TRUE) {
                 $this->getProductService()->updateProduct($product, $this->input->post());
-                $this->session->set_flashdata('message', array('success', 'se actualizo exitosamente'));
+                $this->session->set_flashdata('message', array('success', $this->language->translate('Product was updated successfully')));
                 redirect(base_url('/producto'));
             }
         }
@@ -55,20 +64,19 @@ class Producto extends CI_Controller
     {
         $productId = $this->uri->segment(4);
         $this->getProductService()->deleteProduct($productId);
-        $this->session->set_flashdata('message', array('success', 'se elimino exitosamente'));
+        $this->session->set_flashdata('message', array('success', $this->language->translate('Product was deleted successfully')));
         redirect(base_url('/producto'));
     }
 
     public function add()
     {
-
-        $this->template->title = 'Add Product';
+        $this->template->title = $this->language->translate('Add Product');
         if ($this->input->post()) {
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
 
             if ($this->form_validation->run() == TRUE) {
                 $this->getProductService()->saveProduct($this->input->post());
-                $this->session->set_flashdata('message', array('success', 'se actualizo exitosamente'));
+                $this->session->set_flashdata('message', array('success', $this->language->translate('Product was updated successfully')));
                 redirect(base_url('/producto'));
             }
         }
