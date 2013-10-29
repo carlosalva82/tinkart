@@ -15,10 +15,10 @@ class CisotecService
     public function __construct()
     {
 
-        $this->load = & load_class('Loader', 'core');
-        $this->load->initialize();
-
-        $this->doctrine = $this->load->library('doctrine');
+//        $this->load = & load_class('Loader', 'core');
+//        $this->load->initialize();
+        $CI = & get_instance();
+        $this->doctrine = $CI->load->library('doctrine');
         $this->entityManager = $this->doctrine->em;
     }
 

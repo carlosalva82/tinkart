@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-10-29 07:50-0500\n"
-"PO-Revision-Date: 2013-10-29 07:51-0500\n"
+"POT-Creation-Date: 2013-10-29 13:41-0500\n"
+"PO-Revision-Date: 2013-10-29 13:41-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: En\n"
@@ -14,26 +14,43 @@ msgstr ""
 "X-Poedit-Basepath: C:\\xampp\\htdocs\\tk_repo\\application\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
 
-#: controllers/producto.php:28 ../application/controllers/producto.php:28
+#: controllers/producto.php:29
 msgid "List of Products"
 msgstr "Lista de Productos"
 
-#: controllers/producto.php:41 ../application/controllers/producto.php:41
+#: controllers/producto.php:42 views/producto/edit.php:5
 msgid "Edit Product"
 msgstr "Editar Producto"
 
-#: controllers/producto.php:47 controllers/producto.php:75
-#: ../application/controllers/producto.php:47
-#: ../application/controllers/producto.php:75
+#: controllers/producto.php:49 controllers/producto.php:76
 msgid "Product was updated successfully"
 msgstr "El Producto fue actualizado exitosamente"
 
-#: controllers/producto.php:62 ../application/controllers/producto.php:62
+#: controllers/producto.php:64
 msgid "Product was deleted successfully"
 msgstr "El Producto fue eliminado exitosamente"
 
-#: controllers/producto.php:69 ../application/controllers/producto.php:69
+#: controllers/producto.php:70 views/producto/add.php:5
 msgid "Add Product"
 msgstr "Agregar Producto"
+
+#: views/producto/index.php:3
+msgid "add new"
+msgstr "Agregar nuevo"
+
+#: views/producto/index.php:7
+msgid "Title"
+msgstr "Titulo"
+
+#: views/producto/index.php:8
+msgid "Actions"
+msgstr "Acciones"
+
+#: views/producto/index.php:18
+msgid "delete"
+msgstr "borrar"
+
+#: views/producto/index.php:22
+msgid "edit"
+msgstr "editar"

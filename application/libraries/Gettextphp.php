@@ -7,7 +7,7 @@
 class Gettextphp
 {
 
-    protected $locale_file_reader =null;
+    protected $locale_file_reader = null;
 
     public function __construct()
     {

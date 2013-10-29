@@ -2,7 +2,7 @@
 echo form_open(null, array('class' => 'form-horizontal', 'role' => 'form','style'=>'width:500px; margin:auto'));
 echo validation_errors();
 ?>
-<h2>Edit Product</h2>
+<h2><?php echo translate('Edit Product')?></h2>
 <div class="form-group">
     <label class="col-lg-2 control-label">Titulo</label>
     <div class="col-lg-10">
