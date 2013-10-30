@@ -2,12 +2,14 @@
 
 namespace Service;
 
+use models\Entity\Product;
+
 class ProductService extends \CisotecService
 {
-   
+
     private function getRepositoryProduct()
     {
-        return $this->entityManager->getRepository('Entity\Product');
+        return $this->entityManager->getRepository('models\Entity\Product');
     }
 
     public function fetchProducts()
@@ -41,7 +43,7 @@ class ProductService extends \CisotecService
 
     public function saveProduct($values)
     {
-        $product = new \Entity\Product;
+        $product = new Product;
 
         $product->setDateAdd(new \DateTime);
 

@@ -30,7 +30,7 @@ class Demo extends CI_Controller
 //        $group = new Entity\UserGroup;
 //        $group->setName('Users');
 
-        $user = new Entity\User;
+        $user = new demo\models\Entity\User;
         $service = new Service();
 
         $user->setUsername('charlie');
