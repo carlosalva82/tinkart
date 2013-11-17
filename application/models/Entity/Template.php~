@@ -1,0 +1,91 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Template
+ *
+ * @Table(name="template")
+ * @Entity
+ */
+class Template
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_template", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idTemplate;
+
+    /**
+     * @var string
+     *
+     * @Column(name="title", type="string", length=80, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @Column(name="description", type="string", length=200, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="ranking", type="integer", nullable=true)
+     */
+    private $ranking;
+
+    /**
+     * @var string
+     *
+     * @Column(name="status", type="string", length=1, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="create_date", type="datetime", nullable=true)
+     */
+    private $createDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="update_date", type="datetime", nullable=true)
+     */
+    private $updateDate;
+
+    /**
+     * @var float
+     *
+     * @Column(name="price", type="float", nullable=true)
+     */
+    private $price;
+
+    /**
+     * @var string
+     *
+     * @Column(name="coin", type="string", length=10, nullable=true)
+     */
+    private $coin;
+
+    /**
+     * @var \Category
+     *
+     * @ManyToOne(targetEntity="Category")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_category", referencedColumnName="id_category")
+     * })
+     */
+    private $idCategory;
+
+
+}

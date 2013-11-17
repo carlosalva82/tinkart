@@ -1,0 +1,39 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Product
+ *
+ * @Table(name="product")
+ * @Entity
+ */
+class Product
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @Column(name="title", type="string", length=100, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="date_add", type="date", nullable=true)
+     */
+    private $dateAdd;
+
+
+}

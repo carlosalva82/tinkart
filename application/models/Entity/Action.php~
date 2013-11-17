@@ -1,0 +1,53 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Action
+ *
+ * @Table(name="action")
+ * @Entity
+ */
+class Action
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_action", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAction;
+
+    /**
+     * @var string
+     *
+     * @Column(name="name", type="string", length=30, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @Column(name="controller", type="string", length=45, nullable=true)
+     */
+    private $controller;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ManyToMany(targetEntity="Role", mappedBy="idAction")
+     */
+    private $role;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

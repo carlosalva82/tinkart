@@ -1,0 +1,53 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Country
+ *
+ * @Table(name="country")
+ * @Entity
+ */
+class Country
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="country_id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $countryId;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="iso_num", type="smallint", nullable=true)
+     */
+    private $isoNum;
+
+    /**
+     * @var string
+     *
+     * @Column(name="iso2", type="string", length=2, nullable=true)
+     */
+    private $iso2;
+
+    /**
+     * @var string
+     *
+     * @Column(name="iso3", type="string", length=3, nullable=true)
+     */
+    private $iso3;
+
+    /**
+     * @var string
+     *
+     * @Column(name="name", type="string", length=80, nullable=true)
+     */
+    private $name;
+
+
+}

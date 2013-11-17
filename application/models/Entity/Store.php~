@@ -1,0 +1,70 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Store
+ *
+ * @Table(name="store")
+ * @Entity
+ */
+class Store
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_store", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idStore;
+
+    /**
+     * @var string
+     *
+     * @Column(name="name", type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @Column(name="contact_phone", type="string", length=11, nullable=true)
+     */
+    private $contactPhone;
+
+    /**
+     * @var string
+     *
+     * @Column(name="district", type="string", length=45, nullable=true)
+     */
+    private $district;
+
+    /**
+     * @var string
+     *
+     * @Column(name="address", type="string", length=100, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @Column(name="contact_person", type="string", length=100, nullable=true)
+     */
+    private $contactPerson;
+
+    /**
+     * @var \Country
+     *
+     * @ManyToOne(targetEntity="Country")
+     * @JoinColumns({
+     *   @JoinColumn(name="country_id", referencedColumnName="country_id")
+     * })
+     */
+    private $country;
+
+
+}

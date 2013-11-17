@@ -1,0 +1,108 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @Table(name="user")
+ * @Entity
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_user", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idUser;
+
+    /**
+     * @var string
+     *
+     * @Column(name="name", type="string", length=30, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @Column(name="last_name", type="string", length=30, nullable=false)
+     */
+    private $lastName;
+
+    /**
+     * @var string
+     *
+     * @Column(name="password", type="string", length=120, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="birth_date", type="date", nullable=true)
+     */
+    private $birthDate;
+
+    /**
+     * @var string
+     *
+     * @Column(name="sex", type="string", length=1, nullable=true)
+     */
+    private $sex;
+
+    /**
+     * @var string
+     *
+     * @Column(name="status", type="string", length=1, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @Column(name="activation_key", type="string", length=60, nullable=false)
+     */
+    private $activationKey;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="create_date", type="datetime", nullable=true)
+     */
+    private $createDate;
+
+    /**
+     * @var \Role
+     *
+     * @ManyToOne(targetEntity="Role")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_role", referencedColumnName="id_role")
+     * })
+     */
+    private $idRole;
+
+    /**
+     * @var \Store
+     *
+     * @ManyToOne(targetEntity="Store")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_store", referencedColumnName="id_store")
+     * })
+     */
+    private $idStore;
+
+
+}

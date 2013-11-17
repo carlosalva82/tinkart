@@ -10,6 +10,10 @@
         <link type="text/css" href="<?php echo base_url('include/bootstrap3.0/css/bootstrap.min.css') ?>" rel="stylesheet" >
         <link type="text/css" href="<?php echo base_url('include/css/default.css'); ?>" rel="stylesheet" >
         <?php echo $this->template->stylesheet; ?>
+        
+        <script type="text/javascript" src="<?php echo base_url('include/js/jquery-1.10.2.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('include/bootstrap3.0/js/bootstrap.min.js'); ?>"></script>
+        <?php echo $this->template->javascript; ?>
     </head>
     <body>
 
@@ -47,9 +51,7 @@
             </footer>
 
         </div>
-        <script type="text/javascript" src="<?php echo base_url('include/js/jquery-1.10.2.min.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('include/bootstrap3.0/js/bootstrap.min.js'); ?>"></script>
-        <?php echo $this->template->javascript; ?>
+        
 
     </body>
 </html>

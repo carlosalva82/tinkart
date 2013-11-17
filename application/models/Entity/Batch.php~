@@ -1,0 +1,70 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Batch
+ *
+ * @Table(name="batch")
+ * @Entity
+ */
+class Batch
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_batch", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idBatch;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="create_date", type="datetime", nullable=true)
+     */
+    private $createDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="update_date", type="datetime", nullable=true)
+     */
+    private $updateDate;
+
+    /**
+     * @var string
+     *
+     * @Column(name="rank_serie", type="string", length=20, nullable=true)
+     */
+    private $rankSerie;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="delivery_date", type="datetime", nullable=true)
+     */
+    private $deliveryDate;
+
+    /**
+     * @var string
+     *
+     * @Column(name="state", type="string", length=1, nullable=true)
+     */
+    private $state;
+
+    /**
+     * @var \Store
+     *
+     * @ManyToOne(targetEntity="Store")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_store", referencedColumnName="id_store")
+     * })
+     */
+    private $idStore;
+
+
+}

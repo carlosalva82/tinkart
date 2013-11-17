@@ -1,0 +1,118 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Card
+ *
+ * @Table(name="card")
+ * @Entity
+ */
+class Card
+{
+    /**
+     * @var integer
+     *
+     * @Column(name="id_card", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCard;
+
+    /**
+     * @var string
+     *
+     * @Column(name="editor_code", type="string", length=40, nullable=true)
+     */
+    private $editorCode;
+
+    /**
+     * @var string
+     *
+     * @Column(name="link_code", type="string", length=10, nullable=true)
+     */
+    private $linkCode;
+
+    /**
+     * @var string
+     *
+     * @Column(name="title", type="string", length=30, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @Column(name="url_resource", type="text", nullable=true)
+     */
+    private $urlResource;
+
+    /**
+     * @var string
+     *
+     * @Column(name="resource_type", type="string", length=1, nullable=true)
+     */
+    private $resourceType;
+
+    /**
+     * @var string
+     *
+     * @Column(name="metadata", type="text", nullable=true)
+     */
+    private $metadata;
+
+    /**
+     * @var string
+     *
+     * @Column(name="status", type="string", length=1, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="date_add", type="datetime", nullable=true)
+     */
+    private $dateAdd;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="date_update", type="datetime", nullable=true)
+     */
+    private $dateUpdate;
+
+    /**
+     * @var \Template
+     *
+     * @ManyToOne(targetEntity="Template")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_template", referencedColumnName="id_template")
+     * })
+     */
+    private $idTemplate;
+
+    /**
+     * @var \User
+     *
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \Batch
+     *
+     * @ManyToOne(targetEntity="Batch")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_batch", referencedColumnName="id_batch")
+     * })
+     */
+    private $idBatch;
+
+
+}
